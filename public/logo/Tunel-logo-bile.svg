@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Vrstva_2" data-name="Vrstva 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1270.67 492.76">
+  <defs>
+    <style>
+      .cls-1 {
+        font-family: SourceSansRoman-Regular, 'Source Sans Variable';
+        font-size: 121.13px;
+        font-variation-settings: 'wght' 400;
+      }
+
+      .cls-1, .cls-2 {
+        fill: #fff;
+      }
+
+      .cls-3 {
+        letter-spacing: .19em;
+      }
+
+      .cls-4 {
+        letter-spacing: .17em;
+      }
+
+      .cls-5 {
+        letter-spacing: .18em;
+      }
+
+      .cls-6 {
+        letter-spacing: .19em;
+      }
+
+      .cls-7 {
+        letter-spacing: .19em;
+      }
+
+      .cls-8 {
+        letter-spacing: .17em;
+      }
+
+      .cls-9 {
+        letter-spacing: .15em;
+      }
+
+      .cls-10 {
+        fill: #ed2323;
+      }
+    </style>
+  </defs>
+  <g id="Vrstva_1-2" data-name="Vrstva 1">
+    <g>
+      <text class="cls-1" transform="translate(219.98 100.54) scale(.96 1)"><tspan class="cls-7" x="0" y="0">RE</tspan><tspan class="cls-4" x="178.55" y="0">S</tspan><tspan class="cls-9" x="263.71" y="0">T</tspan><tspan class="cls-8" x="346.68" y="0">A</tspan><tspan class="cls-6" x="433.66" y="0">U</tspan><tspan class="cls-3" x="534.68" y="0">R</tspan><tspan class="cls-5" x="626.02" y="0">A</tspan><tspan class="cls-7" x="713.6" y="0">CE</tspan></text>
+      <g>
+        <path class="cls-2" d="M771.04,492.76l-148.18-176.48c-24.7-29.33-52.72-64.62-73.62-91.47l-.95.5c.95,29.33.95,58.66.95,87.49v174.98h-31.82V170.63h22.32l140.58,168.03c20.42,24.36,48.44,58.66,68.39,85.01l.95-.5c-.95-28.34-.95-56.67-.95-83.52v-169.02h31.82v322.13h-9.5Z"/>
+        <path class="cls-2" d="M859.85,487.79V170.63h178.65v28.83h-146.82v114.34h146.82v28.83h-146.82v116.33h146.82v28.83h-178.65Z"/>
+        <path class="cls-2" d="M1097.78,487.79V170.63h31.82v288.33h141.06v28.83h-172.88Z"/>
+      </g>
+      <path class="cls-2" d="M105.41,199.46v288.33h-31.82V199.46H0v-28.83h179.01v28.83h-73.6Z"/>
+      <g>
+        <path class="cls-10" d="M362.48,153.89h-57c-55.89,0-101.19,45.3-101.19,101.19v232.98h52.43v-138.86c0-18.49,14.99-33.48,33.48-33.48h68.1c18.49,0,33.48,14.99,33.48,33.48v8.41c24.2,2.75,43.07,25.09,43.07,52.24s-18.87,49.49-43.07,52.24v25.97h71.89v-232.98c0-55.89-45.3-101.19-101.19-101.19Z"/>
+        <path class="cls-10" d="M392.26,376.65v65.83c15.25-1.74,27.14-15.81,27.14-32.91s-11.89-31.18-27.14-32.91Z"/>
+      </g>
+    </g>
+  </g>
+</svg>

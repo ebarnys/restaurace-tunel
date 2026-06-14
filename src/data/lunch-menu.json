@@ -1,0 +1,62 @@
+{
+  "weekLabel": "26. 06. – 30. 06. 2023",
+  "soupPrice": 39,
+  "menuNote": "Zvýhodněné polední menu: polévka (15,–) + hlavní jídlo",
+  "days": [
+    {
+      "day": "Pondělí",
+      "date": "26. 6.",
+      "soup": "Drůbeží vývar s nudlemi",
+      "items": [
+        { "desc": "100g Kuře na paprice s houskovými knedlíky (těstoviny)", "price": 144 },
+        { "desc": "100g Smažený sýr s vařenými brambory a domácí tatarkou", "price": 144 },
+        { "desc": "200g Čočka na kyselo s párkem, sázeným vejcem, cibulkou a okurkou", "price": 144 },
+        { "desc": "100g Grilovaný hermelín s opečenými brambory a domácí tatarkou", "price": 144 }
+      ]
+    },
+    {
+      "day": "Úterý",
+      "date": "27. 6.",
+      "soup": "Frankfurtská s bramborem",
+      "items": [
+        { "desc": "250g Špagety s boloňským ragů a sýrem", "price": 144 },
+        { "desc": "100g Vídeňská roštěná s jasmínovou rýží a cibulkou", "price": 144 },
+        { "desc": "250g Zeleninový salát s kuřecím masem a bagetkou", "price": 144 },
+        { "desc": "100g Grilovaný hermelín s opečenými brambory a domácí tatarkou", "price": 144 }
+      ]
+    },
+    {
+      "day": "Středa",
+      "date": "28. 6.",
+      "soup": "Bramboračka s houbami",
+      "items": [
+        { "desc": "100g Hovězí nudličky na víně s bylinkovou rýží", "price": 144 },
+        { "desc": "150g Skládaná tortilla s trhaným kuřecím masem, sýrem a zeleninou", "price": 144 },
+        { "desc": "100g Segedínský guláš s houskovými knedlíky", "price": 144 },
+        { "desc": "100g Grilovaný hermelín s opečenými brambory a domácí tatarkou", "price": 144 }
+      ]
+    },
+    {
+      "day": "Čtvrtek",
+      "date": "29. 6.",
+      "soup": "Česnečka s kroupami",
+      "items": [
+        { "desc": "150g Kuřecí směs se zeleninou a rýží (hranolky)", "price": 144 },
+        { "desc": "100g Vepřová plec dušená v mrkvi s vařenými brambory", "price": 144 },
+        { "desc": "150g Plzeňský hovězí guláš s variací knedlíků", "price": 144 },
+        { "desc": "150g Texaský kotlík s hovězím masem a pečivem", "price": 144 }
+      ]
+    },
+    {
+      "day": "Pátek",
+      "date": "30. 6.",
+      "soup": "Zeleninový krém",
+      "items": [
+        { "desc": "150g Smažený vepřový řízek s bramborovým salátem a citrónem", "price": 144 },
+        { "desc": "150g Kuřecí medailonky s bylinkovou omáčkou a šťouchanými brambory", "price": 144 },
+        { "desc": "100g Domácí sekaná s bramborovou kaší a kyselou okurkou", "price": 144 },
+        { "desc": "150g Texaský kotlík s hovězím masem a pečivem", "price": 144 }
+      ]
+    }
+  ]
+}
