@@ -45,13 +45,13 @@ export default function LunchMenu() {
 
               {/* Soup */}
               {day.soup && (
-                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 20, paddingBottom: 20, borderBottom: "1px solid rgba(255,255,255,0.06)" }}>
-                  <div style={{ display: "flex", gap: 12, alignItems: "center" }}>
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 20, paddingBottom: 20, borderBottom: "1px solid rgba(255,255,255,0.06)", gap: 16 }}>
+                  <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
                     <span style={{ fontSize: 11, letterSpacing: "0.18em", textTransform: "uppercase", color: "#ed2323", fontWeight: 700 }}>Polévka</span>
                     <span style={{ fontSize: 16, color: "rgba(255,255,255,0.6)" }}>{day.soup}</span>
                   </div>
                   {data.soupPrice && (
-                    <span style={{ fontSize: 15, fontWeight: 700, color: "rgba(255,255,255,0.35)", whiteSpace: "nowrap" }}>{data.soupPrice},–</span>
+                    <span style={{ fontSize: 15, fontWeight: 700, color: "#fff", whiteSpace: "nowrap" }}>{data.soupPrice},–</span>
                   )}
                 </div>
               )}

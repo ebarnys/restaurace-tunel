@@ -17,11 +17,11 @@ export default function Events() {
           <div className="section-rule" style={{ margin: "0 auto 28px" }} />
           <h2 className="section-title" style={{ marginBottom: 24 }}>Víc než jen restaurace</h2>
           <p style={{ fontSize: 18, color: "rgba(255,255,255,0.6)", lineHeight: 1.85 }}>
-            Kromě každodenního poledního menu a stálé nabídky jídel a nápojů pořádáme pravidelné sezónní akce a rádi zajistíme i tu vaši — ať už jde o soukromou oslavu, firemní večírek, svatební hostinu nebo raut. Jídlo dovedeme také přímo k vám.
+            Kromě každodenního poledního menu a stálé nabídky jídel a nápojů pořádáme pravidelné sezónní akce a rádi zajistíme i tu vaši — ať už jde o soukromou oslavu, firemní večírek, svatební hostinu nebo raut. Jídlo dovezeme také přímo k vám.
           </p>
         </div>
 
-        <div className="grid-cards">
+        <div className="grid-cards" style={{ marginBottom: 32 }}>
           {events.map((ev) => (
             <div key={ev.title} style={{
               background: "#111",
@@ -46,33 +46,56 @@ export default function Events() {
           ))}
         </div>
 
-        {/* Sport strip */}
-        <div style={{ marginTop: 48, padding: "28px 36px", background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.07)", display: "flex", alignItems: "center", gap: 24, flexWrap: "wrap" }}>
-          <p style={{ fontSize: 13, fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: "#ed2323", whiteSpace: "nowrap" }}>V areálu také</p>
-          <div style={{ width: 1, height: 20, background: "rgba(255,255,255,0.12)" }} />
-          {[
-            { icon: "🏐", label: "Beach volejbal" },
-            { icon: "⚽", label: "Fotbal" },
-            { icon: "🦶", label: "Nohejbal" },
-            { icon: "🏐", label: "Volejbal" },
-            { icon: "♟️", label: "Šachy" },
-          ].map((s) => (
-            <div key={s.label} style={{ display: "flex", alignItems: "center", gap: 8 }}>
-              <span style={{ fontSize: 16 }}>{s.icon}</span>
-              <span style={{ fontSize: 15, color: "rgba(255,255,255,0.6)", fontWeight: 600 }}>{s.label}</span>
-            </div>
-          ))}
-          <p style={{ fontSize: 14, color: "rgba(255,255,255,0.35)" }}>Sportoviště v areálu Sokol Letná</p>
-        </div>
-
-        {/* CTA */}
-        <div style={{ marginTop: 64, padding: "48px 0", textAlign: "center", borderTop: "1px solid rgba(255,255,255,0.07)" }}>
-          <h3 style={{ fontSize: "clamp(1.8rem, 3.5vw, 3rem)", fontWeight: 900, color: "#fff", letterSpacing: "-0.02em", marginBottom: 36 }}>
-            Plánujete akci?
-          </h3>
-          <a href="#kontakt" className="btn-red" style={{ fontSize: 14, padding: "17px 44px" }}>
+        {/* CTA — přímo pod kartami */}
+        <div style={{ padding: "36px 48px", border: "1px solid rgba(255,255,255,0.08)", display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: 24, marginBottom: 48 }}>
+          <div>
+            <h3 style={{ fontSize: "clamp(1.4rem, 2.5vw, 2rem)", fontWeight: 900, color: "#fff", letterSpacing: "-0.02em", marginBottom: 6 }}>
+              Plánujete akci?
+            </h3>
+            <p style={{ fontSize: 15, color: "rgba(255,255,255,0.45)" }}>Rádi vše připravíme na míru.</p>
+          </div>
+          <a href="#kontakt" className="btn-red" style={{ fontSize: 13, padding: "14px 40px", flexShrink: 0 }}>
             Napište nám
           </a>
+        </div>
+
+        {/* Entertainment & sport strip */}
+        <div className="events-info-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 2 }}>
+          {/* Sports */}
+          <div style={{ padding: "28px 32px", background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.07)" }}>
+            <p style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: "#ed2323", marginBottom: 16 }}>V areálu Sokol Letná</p>
+            <div style={{ display: "flex", flexWrap: "wrap", gap: "12px 24px" }}>
+              {[
+                { icon: "🏐", label: "Beach volejbal" },
+                { icon: "⚽", label: "Fotbal" },
+                { icon: "🦶", label: "Nohejbal" },
+                { icon: "🏐", label: "Volejbal" },
+                { icon: "♟️", label: "Šachy" },
+              ].map((s) => (
+                <div key={s.label} style={{ display: "flex", alignItems: "center", gap: 8 }}>
+                  <span style={{ fontSize: 16 }}>{s.icon}</span>
+                  <span style={{ fontSize: 15, color: "rgba(255,255,255,0.6)", fontWeight: 600 }}>{s.label}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+          {/* Entertainment */}
+          <div style={{ padding: "28px 32px", background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.07)" }}>
+            <p style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: "#ed2323", marginBottom: 16 }}>Zábava v restauraci</p>
+            <div style={{ display: "flex", flexWrap: "wrap", gap: "12px 24px" }}>
+              {[
+                { icon: "📺", label: "Přenosy FC Viktoria Plzeň" },
+                { icon: "🎯", label: "Šipkový automat" },
+                { icon: "🧠", label: "Pub quiz" },
+                { icon: "🍺", label: "Rezervace na zápasy" },
+              ].map((s) => (
+                <div key={s.label} style={{ display: "flex", alignItems: "center", gap: 8 }}>
+                  <span style={{ fontSize: 16 }}>{s.icon}</span>
+                  <span style={{ fontSize: 15, color: "rgba(255,255,255,0.6)", fontWeight: 600 }}>{s.label}</span>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>

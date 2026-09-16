@@ -173,7 +173,9 @@ body {
 
 /* Mobile responsive overrides */
 @media (max-width: 768px) {
-  .grid-contact { grid-template-columns: 1fr !important; gap: 40px !important; }
+  .grid-contact { grid-template-columns: 1fr !important; gap: 48px !important; }
+  .grid-contact > div { padding-left: 0 !important; padding-right: 0 !important; border-left: none !important; border-right: none !important; border-top: 1px solid rgba(255,255,255,0.07); padding-top: 40px !important; }
+  .grid-contact > div:first-child { border-top: none; padding-top: 0 !important; }
   .footer-grid { grid-template-columns: 1fr 1fr !important; gap: 36px !important; }
 }
 @media (max-width: 500px) {
@@ -214,10 +216,9 @@ body {
   .lunch-grid { grid-template-columns: 1fr !important; }
 }
 
-/* Events sport strip mobile */
-@media (max-width: 600px) {
-  .sport-strip { flex-direction: column !important; gap: 16px !important; }
-  .sport-strip > div { display: none; }
+/* Events entertainment grid mobile */
+@media (max-width: 700px) {
+  .events-info-grid { grid-template-columns: 1fr !important; }
 }
 
 /* Menu item row */

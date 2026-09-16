@@ -35,20 +35,6 @@ export default function Hero() {
       <div className="wrap" style={{ position: "relative", zIndex: 2, paddingTop: 120, paddingBottom: 80, width: "100%" }}>
         <div className="hero-content" style={{ maxWidth: 580, display: "flex", flexDirection: "column" }}>
 
-          {/* Google rating */}
-          <div className="hero-rating" style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 32, flexWrap: "wrap" }}>
-            <div style={{ display: "flex", gap: 3 }}>
-              {[...Array(5)].map((_, i) => (
-                <svg key={i} width="17" height="17" viewBox="0 0 24 24" fill="#f5a623">
-                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                </svg>
-              ))}
-            </div>
-            <span style={{ fontSize: 16, fontWeight: 700, color: "#fff" }}>4,4/5</span>
-            <span style={{ fontSize: 14, color: "rgba(255,255,255,0.3)" }}>|</span>
-            <span style={{ fontSize: 14, color: "rgba(255,255,255,0.55)" }}>více než 720 recenzí na Google</span>
-          </div>
-
           {/* Headline */}
           <h1 style={{
             fontSize: "clamp(2.2rem, 5vw, 4rem)",
@@ -80,6 +66,20 @@ export default function Hero() {
             <a href="#jidelni-listek" className="btn-ghost" style={{ fontSize: 13, padding: "14px 28px" }}>
               Naše stálé menu
             </a>
+          </div>
+
+          {/* Google rating — social proof below CTAs */}
+          <div className="hero-rating" style={{ display: "flex", alignItems: "center", gap: 8, marginTop: 32, flexWrap: "wrap" }}>
+            <div style={{ display: "flex", gap: 3 }}>
+              {[...Array(5)].map((_, i) => (
+                <svg key={i} width="15" height="15" viewBox="0 0 24 24" fill="#f5a623">
+                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                </svg>
+              ))}
+            </div>
+            <span style={{ fontSize: 14, fontWeight: 700, color: "rgba(255,255,255,0.75)" }}>4,4/5</span>
+            <span style={{ fontSize: 12, color: "rgba(255,255,255,0.25)" }}>|</span>
+            <span style={{ fontSize: 13, color: "rgba(255,255,255,0.45)" }}>více než 745 recenzí na Google</span>
           </div>
         </div>
       </div>

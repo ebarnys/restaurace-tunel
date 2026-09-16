@@ -110,8 +110,8 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div style={{ borderTop: "1px solid rgba(255,255,255,0.06)", paddingTop: 24, display: "flex", justifyContent: "space-between", flexWrap: "wrap", gap: 8 }}>
-          <p style={{ fontSize: 13, color: "rgba(255,255,255,0.2)" }}>© 2025 Restaurace TUNEL · Všechna práva vyhrazena</p>
-          <p style={{ fontSize: 13, color: "rgba(255,255,255,0.2)" }}>IČO: 123 456 78</p>
+          <p style={{ fontSize: 13, color: "rgba(255,255,255,0.2)" }}>© {new Date().getFullYear()} Restaurace TUNEL · Všechna práva vyhrazena</p>
+          <p style={{ fontSize: 13, color: "rgba(255,255,255,0.2)" }}>Webdesign <a href="https://www.tmnk.cz" target="_blank" rel="noopener noreferrer" style={{ color: "rgba(255,255,255,0.35)", textDecoration: "none" }}>TMNK design</a></p>
         </div>
       </div>
     </footer>
