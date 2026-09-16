@@ -4,6 +4,7 @@ import About from "@/components/About";
 import LunchMenu from "@/components/LunchMenu";
 import Contact from "@/components/Contact";
 import CtaBanner from "@/components/CtaBanner";
+import GiftVoucher from "@/components/GiftVoucher";
 import Menu from "@/components/Menu";
 import Events from "@/components/Events";
 import Gallery from "@/components/Gallery";
@@ -18,6 +19,7 @@ export default function Home() {
         <About />
         <LunchMenu />
         <CtaBanner />
+        <GiftVoucher />
         <Menu />
         <Events />
         <Gallery />

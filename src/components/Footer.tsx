@@ -35,9 +35,21 @@ export default function Footer() {
           {/* Logo + tagline */}
           <div>
             <img src="/logo/logo.png" alt="Restaurace TUNEL" style={{ height: 48, width: "auto", marginBottom: 20 }} />
-            <p style={{ fontSize: 15, color: "rgba(255,255,255,0.4)", lineHeight: 1.75, maxWidth: 240 }}>
-              Poctivé jídlo a čerstvé tankové pivo v Plzni od roku 2014.
+            <p style={{ fontSize: 15, color: "rgba(255,255,255,0.4)", lineHeight: 1.75, maxWidth: 260, marginBottom: 20 }}>
+              Čerstvé tankové pivo, poctivé jídlo a příjemná terasa v Plzni. K nám se lidé vracejí rádi — a to od roku 2014.
             </p>
+            <div style={{ display: "flex", alignItems: "center", gap: 6, flexWrap: "wrap" }}>
+              <div style={{ display: "flex", gap: 2 }}>
+                {[...Array(5)].map((_, i) => (
+                  <svg key={i} width="12" height="12" viewBox="0 0 24 24" fill="#f5a623">
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                  </svg>
+                ))}
+              </div>
+              <span style={{ fontSize: 13, fontWeight: 700, color: "rgba(255,255,255,0.55)" }}>4,4/5</span>
+              <span style={{ fontSize: 12, color: "rgba(255,255,255,0.2)" }}>·</span>
+              <span style={{ fontSize: 12, color: "rgba(255,255,255,0.3)" }}>745 recenzí na Google</span>
+            </div>
             <div style={{ display: "flex", gap: 12, marginTop: 24 }}>
               {[
                 { href: "https://www.facebook.com/restaurantTunel/", label: "FB", icon: <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg> },

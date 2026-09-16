@@ -216,6 +216,11 @@ body {
   .lunch-grid { grid-template-columns: 1fr !important; }
 }
 
+/* Gift voucher grid mobile */
+@media (max-width: 900px) {
+  .voucher-grid { grid-template-columns: 1fr !important; gap: 48px !important; }
+}
+
 /* Events entertainment grid mobile */
 @media (max-width: 700px) {
   .events-info-grid { grid-template-columns: 1fr !important; }

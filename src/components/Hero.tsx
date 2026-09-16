@@ -26,14 +26,14 @@ export default function Hero() {
         />
         <div style={{
           position: "absolute", inset: 0,
-          background: "linear-gradient(to right, rgba(10,10,10,0.97) 0%, rgba(10,10,10,0.85) 40%, rgba(10,10,10,0.45) 100%)",
+          background: "linear-gradient(to bottom, rgba(10,10,10,0.75) 0%, rgba(10,10,10,0.65) 50%, rgba(10,10,10,0.8) 100%)",
         }} />
         <div style={{ position: "absolute", inset: 0, background: "rgba(0,0,0,0.4)" }} />
       </div>
 
       {/* Content */}
       <div className="wrap" style={{ position: "relative", zIndex: 2, paddingTop: 120, paddingBottom: 80, width: "100%" }}>
-        <div className="hero-content" style={{ maxWidth: 580, display: "flex", flexDirection: "column" }}>
+        <div className="hero-content" style={{ maxWidth: 700, margin: "0 auto", display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center" }}>
 
           {/* Headline */}
           <h1 style={{
@@ -44,7 +44,7 @@ export default function Hero() {
             color: "#fff",
             marginBottom: 24,
           }}>
-            Poctivé jídlo<br />a tankové pivo <span style={{ color: "#ed2323" }}>v Plzni</span>
+            Poctivé jídlo<br />a tankové pivo <span style={{ color: "#ed2323", whiteSpace: "nowrap" }}>v Plzni</span>
           </h1>
 
           {/* Subtext */}
@@ -55,7 +55,7 @@ export default function Hero() {
             marginBottom: 40,
             maxWidth: 440,
           }}>
-            Čerstvé tankové pivo, poctivé domácí jídlo a příjemná terasa. K nám se lidé vracejí rádi — a to od roku 2014.
+            Čerstvé tankové pivo, poctivé jídlo a příjemná terasa v Plzni. K nám se lidé vracejí rádi — a to od roku 2014.
           </p>
 
           {/* 2 CTA buttons */}
