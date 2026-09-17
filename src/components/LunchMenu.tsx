@@ -33,6 +33,16 @@ export default function LunchMenu() {
           </div>
         </div>
 
+        <div style={{ display: "flex", gap: 24, marginBottom: 40, flexWrap: "wrap" }}>
+          <span style={{ fontSize: 14, color: "rgba(255,255,255,0.45)", letterSpacing: "0.06em" }}>
+            Polévka k hlavnímu chodu <strong style={{ color: "rgba(255,255,255,0.75)" }}>29,–</strong>
+          </span>
+          <span style={{ fontSize: 14, color: "rgba(255,255,255,0.2)" }}>·</span>
+          <span style={{ fontSize: 14, color: "rgba(255,255,255,0.45)", letterSpacing: "0.06em" }}>
+            Velká polévka <strong style={{ color: "rgba(255,255,255,0.75)" }}>55,–</strong>
+          </span>
+        </div>
+
         {data.menuNote && (
           <p style={{ fontSize: 15, color: "rgba(255,255,255,0.4)", marginBottom: 48, letterSpacing: "0.04em" }}>
             {data.menuNote} · Samotná polévka: {data.soupPrice},– · Seznam alergenů na vyžádání u obsluhy
