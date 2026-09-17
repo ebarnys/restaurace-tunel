@@ -235,19 +235,19 @@ export default function AdminPage() {
 
         {/* Help section */}
         <div style={{ marginBottom: 48, display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: 20 }}>
-          {/* Card 1 — Polední menu */}
+          {/* Card 1 - Poledni menu */}
           <div style={{ padding: 28, background: "#111", border: "1px solid rgba(255,255,255,0.08)" }}>
             <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 20 }}>
               <div style={{ width: 36, height: 36, borderRadius: "50%", background: "#ed2323", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 16, flexShrink: 0 }}>📋</div>
-              <p style={{ fontSize: 14, fontWeight: 700, color: "#fff", margin: 0 }}>Jak zadat polední menu</p>
+              <p style={{ fontSize: 14, fontWeight: 700, color: "#fff", margin: 0 }}>Jak zadat poledni menu</p>
             </div>
             <div style={{ display: "flex", flexDirection: "column" as const, gap: 12 }}>
-              {[
-                { n: 1, text: 'Do pole "Označení týdne" napiš rozsah datumů, který se zobrazí zákazníkům jako nadpis — např. 15. – 19. 9. 2025.' },
-                { n: 2, text: "Pro každý den (Pondělí–Pátek) zadej datum (např. 15. 9.), název polévky a jednotlivá jídla s cenou v Kč." },
-                { n: 3, text: 'Chybí ti položka? Klikni na "+ Přidat položku". Nepotřebuješ ji? Klikni na × vedle ní.' },
-                { n: 4, text: 'Až máš vše vyplněno, klikni na červené tlačítko "Uložit menu" — změny se okamžitě zobrazí na webu, není třeba nic dalšího dělat.' },
-              ].map(({ n, text }) => (
+              {([
+                [1, 'Vyplnte pole "Oznaceni tydne" - napiste rozsah datumu, ktery se zobrazi zakaznikum jako nadpis. Napr. 15. - 19. 9. 2025.'],
+                [2, 'Pro kazdy den od Pondeli do Patku zadejte datum (napr. 15. 9.), nazev polevky a jednotliva jidla s cenou v Kc.'],
+                [3, 'Chybi polozka? Kliknete na tlacitko + Pridat polozku. Polozka se nehodi? Kliknete na x vedle ni.'],
+                [4, 'Kdyz mate vse vyplneno, kliknete na cervene tlacitko "Ulozit menu". Zmeny se okamzite zobrazi na webu - neni treba nic dalsiho delat.'],
+              ] as [number, string][]).map(([n, text]) => (
                 <div key={n} style={{ display: "flex", gap: 12, alignItems: "flex-start" }}>
                   <div style={{ width: 22, height: 22, borderRadius: "50%", background: "#ed2323", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 11, fontWeight: 700, color: "#fff", flexShrink: 0, marginTop: 1 }}>{n}</div>
                   <p style={{ fontSize: 13, color: "rgba(255,255,255,0.65)", lineHeight: 1.6, margin: 0 }}>{text}</p>
@@ -256,19 +256,19 @@ export default function AdminPage() {
             </div>
           </div>
 
-          {/* Card 2 — Speciální nabídka */}
+          {/* Card 2 - Specialni nabidka */}
           <div style={{ padding: 28, background: "#111", border: "1px solid rgba(255,255,255,0.08)" }}>
             <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 20 }}>
               <div style={{ width: 36, height: 36, borderRadius: "50%", background: "#ed2323", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 16, flexShrink: 0 }}>🖼️</div>
-              <p style={{ fontSize: 14, fontWeight: 700, color: "#fff", margin: 0 }}>Jak spravovat speciální nabídku</p>
+              <p style={{ fontSize: 14, fontWeight: 700, color: "#fff", margin: 0 }}>Jak spravovat specialni nabidku</p>
             </div>
             <div style={{ display: "flex", flexDirection: "column" as const, gap: 12 }}>
-              {[
-                { n: 1, text: 'Speciální nabídku najdeš níže na stránce. Klikni na pole "Nahrát obrázek" a vyber fotografii nebo leták akce (JPG, PNG nebo WebP).' },
-                { n: 2, text: "Po nahrání se nabídka automaticky zapne — popup s obrázkem se zobrazí každému návštěvníkovi jednou při otevření webu." },
-                { n: 3, text: "Chceš nabídku dočasně skrýt? Přepni přepínač do polohy „vypnuto" — obrázek zůstane uložený, jen se návštěvníkům nezobrazí." },
-                { n: 4, text: "Nová akce? Jednoduše nahraj nový obrázek — automaticky nahradí starý a nabídka se znovu aktivuje." },
-              ].map(({ n, text }) => (
+              {([
+                [1, 'Specialni nabidku najdete nize na strance. Kliknete na pole "Nahrat obrazek" a vyberte fotografii nebo letak akce (JPG, PNG nebo WebP).'],
+                [2, 'Po nahrani se nabidka automaticky zapne - popup s obrazkem se zobrazi kazdemu navstevnikovi jednou pri otevreni webu.'],
+                [3, 'Chcete nabidku docasne skryt? Prepnete prepinac vlevo - obrazek zustane ulozen, jen se navstevnikum nebude zobrazovat.'],
+                [4, 'Nova akce? Nahrejte novy obrazek - automaticky nahradi stary a nabidka se znovu aktivuje.'],
+              ] as [number, string][]).map(([n, text]) => (
                 <div key={n} style={{ display: "flex", gap: 12, alignItems: "flex-start" }}>
                   <div style={{ width: 22, height: 22, borderRadius: "50%", background: "#ed2323", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 11, fontWeight: 700, color: "#fff", flexShrink: 0, marginTop: 1 }}>{n}</div>
                   <p style={{ fontSize: 13, color: "rgba(255,255,255,0.65)", lineHeight: 1.6, margin: 0 }}>{text}</p>
