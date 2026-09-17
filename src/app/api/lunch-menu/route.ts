@@ -25,9 +25,8 @@ export async function GET() {
 export async function POST(req: NextRequest) {
   const body = await req.json();
 
-  console.log("PWD_LEN_BODY:", body.password?.length, "PWD_LEN_ENV:", ADMIN_PASSWORD.length, "MATCH:", body.password === ADMIN_PASSWORD);
   if (body.password !== ADMIN_PASSWORD) {
-    return NextResponse.json({ error: "Nesprávné heslo", debug: { bodyLen: body.password?.length, envLen: ADMIN_PASSWORD.length } }, { status: 401 });
+    return NextResponse.json({ error: "Nesprávné heslo" }, { status: 401 });
   }
 
   const { password: _, ...menuData } = body;
