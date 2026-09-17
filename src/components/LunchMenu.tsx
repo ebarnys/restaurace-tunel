@@ -1,10 +1,20 @@
-import lunchData from "@/data/lunch-menu.json";
+"use client";
+import { useState, useEffect } from "react";
 
 type Day = { day: string; date: string; soup: string; items: { desc: string; price: number }[] };
 type LunchData = { weekLabel: string; soupPrice?: number; menuNote?: string; days: Day[] };
 
+const FALLBACK: LunchData = { weekLabel: "Menu se připravuje", days: [] };
+
 export default function LunchMenu() {
-  const data = lunchData as LunchData;
+  const [data, setData] = useState<LunchData>(FALLBACK);
+
+  useEffect(() => {
+    fetch("/api/lunch-menu")
+      .then((r) => r.json())
+      .then((d) => { if (d.days) setData(d); })
+      .catch(() => {});
+  }, []);
 
   return (
     <section id="poledni-menu" className="section" style={{ background: "var(--dark)" }}>
@@ -26,6 +36,12 @@ export default function LunchMenu() {
         {data.menuNote && (
           <p style={{ fontSize: 15, color: "rgba(255,255,255,0.4)", marginBottom: 48, letterSpacing: "0.04em" }}>
             {data.menuNote} · Samotná polévka: {data.soupPrice},– · Seznam alergenů na vyžádání u obsluhy
+          </p>
+        )}
+
+        {data.days.length === 0 && (
+          <p style={{ fontSize: 16, color: "rgba(255,255,255,0.35)", padding: "48px 0" }}>
+            Aktuální menu bude brzy k dispozici.
           </p>
         )}
 
