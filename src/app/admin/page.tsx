@@ -345,8 +345,60 @@ export default function AdminPage() {
           </button>
         </div>
 
+        {/* Help section */}
+        <div style={{ marginTop: 64, padding: 32, background: "#0d0d0d", border: "1px solid rgba(255,255,255,0.06)" }}>
+          <p style={{ fontSize: 12, fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: "rgba(255,255,255,0.25)", marginBottom: 28 }}>Jak to používat</p>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 20 }}>
+            {/* Card 1 */}
+            <div style={{ padding: 24, background: "#111", border: "1px solid rgba(255,255,255,0.06)" }}>
+              <div style={{ width: 36, height: 36, borderRadius: "50%", background: "#ed2323", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 16, marginBottom: 16 }}>📋</div>
+              <p style={{ fontSize: 13, fontWeight: 700, marginBottom: 10, color: "#fff" }}>Polední menu na týden</p>
+              <ol style={{ paddingLeft: 18, margin: 0, display: "flex", flexDirection: "column" as const, gap: 6 }}>
+                {[
+                  "Vyplň \"Označení týdne\" — zobrazí se zákazníkům jako nadpis (např. 13. – 17. 5. 2025).",
+                  "Pro každý den zadej datum, název polévky a jednotlivá jídla s cenou.",
+                  "Přidej nebo odeber položky tlačítky + Přidat položku / ×.",
+                  "Klikni Uložit menu — změny se okamžitě projeví na webu.",
+                ].map((step, i) => (
+                  <li key={i} style={{ fontSize: 13, color: "rgba(255,255,255,0.55)", lineHeight: 1.55 }}>{step}</li>
+                ))}
+              </ol>
+            </div>
+            {/* Card 2 */}
+            <div style={{ padding: 24, background: "#111", border: "1px solid rgba(255,255,255,0.06)" }}>
+              <div style={{ width: 36, height: 36, borderRadius: "50%", background: "#ed2323", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 16, marginBottom: 16 }}>🖼️</div>
+              <p style={{ fontSize: 13, fontWeight: 700, marginBottom: 10, color: "#fff" }}>Speciální nabídka (popup)</p>
+              <ol style={{ paddingLeft: 18, margin: 0, display: "flex", flexDirection: "column" as const, gap: 6 }}>
+                {[
+                  "Klikni na oblast \"Nahrát obrázek\" a vyber fotografii nebo leták nabídky (JPG, PNG, WebP).",
+                  "Po nahrání se nabídka automaticky aktivuje — návštěvníci uvidí popup při první návštěvě.",
+                  "Chceš nabídku skrýt? Přepni přepínač vlevo — obrázek zůstane uložen, jen se nebude zobrazovat.",
+                  "Nová akce? Nahraj jiný obrázek — starý se přepíše.",
+                ].map((step, i) => (
+                  <li key={i} style={{ fontSize: 13, color: "rgba(255,255,255,0.55)", lineHeight: 1.55 }}>{step}</li>
+                ))}
+              </ol>
+            </div>
+            {/* Card 3 */}
+            <div style={{ padding: 24, background: "#111", border: "1px solid rgba(255,255,255,0.06)" }}>
+              <div style={{ width: 36, height: 36, borderRadius: "50%", background: "rgba(255,255,255,0.06)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 16, marginBottom: 16 }}>💡</div>
+              <p style={{ fontSize: 13, fontWeight: 700, marginBottom: 10, color: "#fff" }}>Tipy</p>
+              <ul style={{ paddingLeft: 18, margin: 0, display: "flex", flexDirection: "column" as const, gap: 6 }}>
+                {[
+                  "Menu se ukládá do databáze — funguje z jakéhokoliv zařízení.",
+                  "Popup se každému návštěvníkovi zobrazí jen jednou za návštěvu prohlížeče.",
+                  "Změny menu jsou viditelné ihned po uložení — není potřeba čekat.",
+                  "Při problémech zkontroluj připojení k internetu a zkus to znovu.",
+                ].map((tip, i) => (
+                  <li key={i} style={{ fontSize: 13, color: "rgba(255,255,255,0.55)", lineHeight: 1.55 }}>{tip}</li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+
         {/* Special offer section */}
-        <div style={{ marginTop: 64, padding: 32, background: "#111", border: "1px solid rgba(255,255,255,0.08)" }}>
+        <div style={{ marginTop: 32, padding: 32, background: "#111", border: "1px solid rgba(255,255,255,0.08)" }}>
           <p style={{ fontSize: 12, fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: "#ed2323", marginBottom: 24 }}>Speciální nabídka</p>
 
           {/* Toggle */}
