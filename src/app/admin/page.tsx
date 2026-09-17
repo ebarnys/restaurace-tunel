@@ -243,10 +243,10 @@ export default function AdminPage() {
             </div>
             <div style={{ display: "flex", flexDirection: "column" as const, gap: 12 }}>
               {[
-                { n: 1, text: "Do pole „Označení týdne" napiš rozsah datumů, který se zobrazí zákazníkům jako nadpis — např. 15. – 19. 9. 2025." },
+                { n: 1, text: 'Do pole "Označení týdne" napiš rozsah datumů, který se zobrazí zákazníkům jako nadpis — např. 15. – 19. 9. 2025.' },
                 { n: 2, text: "Pro každý den (Pondělí–Pátek) zadej datum (např. 15. 9.), název polévky a jednotlivá jídla s cenou v Kč." },
-                { n: 3, text: "Chybí ti položka? Klikni na „+ Přidat položku". Nepotřebuješ ji? Klikni na × vedle ní." },
-                { n: 4, text: "Až máš vše vyplněno, klikni na červené tlačítko „Uložit menu" — změny se okamžitě zobrazí na webu, není třeba nic dalšího dělat." },
+                { n: 3, text: 'Chybí ti položka? Klikni na "+ Přidat položku". Nepotřebuješ ji? Klikni na × vedle ní.' },
+                { n: 4, text: 'Až máš vše vyplněno, klikni na červené tlačítko "Uložit menu" — změny se okamžitě zobrazí na webu, není třeba nic dalšího dělat.' },
               ].map(({ n, text }) => (
                 <div key={n} style={{ display: "flex", gap: 12, alignItems: "flex-start" }}>
                   <div style={{ width: 22, height: 22, borderRadius: "50%", background: "#ed2323", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 11, fontWeight: 700, color: "#fff", flexShrink: 0, marginTop: 1 }}>{n}</div>
@@ -264,7 +264,7 @@ export default function AdminPage() {
             </div>
             <div style={{ display: "flex", flexDirection: "column" as const, gap: 12 }}>
               {[
-                { n: 1, text: "Speciální nabídku najdeš níže na stránce. Klikni na pole „Nahrát obrázek" a vyber fotografii nebo leták akce (JPG, PNG nebo WebP)." },
+                { n: 1, text: 'Speciální nabídku najdeš níže na stránce. Klikni na pole "Nahrát obrázek" a vyber fotografii nebo leták akce (JPG, PNG nebo WebP).' },
                 { n: 2, text: "Po nahrání se nabídka automaticky zapne — popup s obrázkem se zobrazí každému návštěvníkovi jednou při otevření webu." },
                 { n: 3, text: "Chceš nabídku dočasně skrýt? Přepni přepínač do polohy „vypnuto" — obrázek zůstane uložený, jen se návštěvníkům nezobrazí." },
                 { n: 4, text: "Nová akce? Jednoduše nahraj nový obrázek — automaticky nahradí starý a nabídka se znovu aktivuje." },
