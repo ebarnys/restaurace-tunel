@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { League_Spartan } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 
 const leagueSpartan = League_Spartan({
@@ -16,6 +17,13 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="cs">
+      <Script src="https://www.googletagmanager.com/gtag/js?id=G-VX685GNJ4J" strategy="afterInteractive" />
+      <Script id="ga4" strategy="afterInteractive">{`
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-VX685GNJ4J');
+      `}</Script>
       <body className={leagueSpartan.className}>{children}</body>
     </html>
   );
