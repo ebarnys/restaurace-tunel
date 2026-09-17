@@ -53,25 +53,29 @@ export default function SpecialOfferPopup() {
         onClick={(e) => e.stopPropagation()}
         style={{
           position: "relative",
-          maxWidth: 520,
           width: "100%",
+          maxWidth: 460,
+          maxHeight: "90vh",
+          display: "flex",
+          flexDirection: "column",
           animation: "slideUp 0.35s ease",
+          boxShadow: "0 32px 80px rgba(0,0,0,0.7)",
         }}
       >
-        {/* Close button */}
+        {/* Close button — inside top-right corner */}
         <button
           onClick={close}
           aria-label="Zavřít"
           style={{
             position: "absolute",
-            top: -16,
-            right: -16,
+            top: 12,
+            right: 12,
             zIndex: 10,
-            width: 40,
-            height: 40,
+            width: 36,
+            height: 36,
             borderRadius: "50%",
-            background: "#ed2323",
-            border: "none",
+            background: "rgba(0,0,0,0.7)",
+            border: "2px solid rgba(255,255,255,0.3)",
             color: "#fff",
             fontSize: 20,
             lineHeight: 1,
@@ -79,26 +83,25 @@ export default function SpecialOfferPopup() {
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            boxShadow: "0 4px 16px rgba(237,35,35,0.4)",
+            backdropFilter: "blur(4px)",
           }}
         >
           ×
         </button>
 
-        {/* Image */}
+        {/* Image — fills available height */}
         <div style={{
           position: "relative",
-          width: "100%",
-          aspectRatio: "3/4",
+          flex: 1,
+          minHeight: 0,
           overflow: "hidden",
-          boxShadow: "0 32px 80px rgba(0,0,0,0.6)",
         }}>
           <Image
             src={imageUrl}
             alt="Speciální nabídka Restaurace TUNEL"
             fill
-            style={{ objectFit: "cover" }}
-            sizes="(max-width: 600px) 100vw, 520px"
+            style={{ objectFit: "contain", objectPosition: "center" }}
+            sizes="(max-width: 600px) 100vw, 460px"
             priority
           />
         </div>
@@ -107,22 +110,22 @@ export default function SpecialOfferPopup() {
         <div style={{
           background: "#111",
           borderTop: "3px solid #ed2323",
-          padding: "16px 24px",
+          padding: "14px 20px",
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
           gap: 16,
-          flexWrap: "wrap",
+          flexShrink: 0,
         }}>
           <div>
             <p style={{ fontSize: 11, letterSpacing: "0.15em", textTransform: "uppercase", color: "#ed2323", fontWeight: 700, marginBottom: 2 }}>Speciální nabídka</p>
-            <p style={{ fontSize: 13, color: "rgba(255,255,255,0.45)" }}>Restaurace TUNEL · Plzeň</p>
+            <p style={{ fontSize: 12, color: "rgba(255,255,255,0.45)" }}>Restaurace TUNEL · Plzeň</p>
           </div>
           <a
             href="#jidelni-listek"
             onClick={close}
             style={{
-              padding: "10px 24px",
+              padding: "9px 20px",
               background: "#ed2323",
               color: "#fff",
               border: "none",
@@ -132,6 +135,7 @@ export default function SpecialOfferPopup() {
               textTransform: "uppercase",
               textDecoration: "none",
               whiteSpace: "nowrap",
+              flexShrink: 0,
             }}
           >
             Zobrazit menu
