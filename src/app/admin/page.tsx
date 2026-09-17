@@ -38,7 +38,11 @@ export default function AdminPage() {
         body: JSON.stringify({ ...data, password }),
       });
       if (test.ok) {
-        setMenu(data);
+        const loaded = data as LunchMenu;
+        if (!loaded.days || loaded.days.length === 0) {
+          loaded.days = DAYS.map(emptyDay);
+        }
+        setMenu(loaded);
         setAuth(true);
       } else {
         setAuthError("Nesprávné heslo. Zkuste to znovu.");
