@@ -25,6 +25,12 @@ export default function AdminPage() {
   const [saved, setSaved] = useState(false);
   const [loading, setLoading] = useState(false);
 
+  // Special offer state
+  const [offerActive, setOfferActive] = useState(false);
+  const [offerImageUrl, setOfferImageUrl] = useState<string | null>(null);
+  const [offerUploading, setOfferUploading] = useState(false);
+  const [offerMsg, setOfferMsg] = useState("");
+
   async function handleLogin(e: React.FormEvent) {
     e.preventDefault();
     setLoading(true);
@@ -44,6 +50,11 @@ export default function AdminPage() {
         }
         setMenu(loaded);
         setAuth(true);
+        // Load special offer state
+        fetch("/api/special-offer").then(r => r.json()).then(d => {
+          setOfferActive(d.active);
+          setOfferImageUrl(d.image_url);
+        }).catch(() => {});
       } else {
         setAuthError("Nesprávné heslo. Zkuste to znovu.");
       }
@@ -90,6 +101,35 @@ export default function AdminPage() {
     const days = [...menu.days];
     days[dayIndex].items = days[dayIndex].items.filter((_, i) => i !== itemIndex);
     setMenu({ ...menu, days });
+  }
+
+  async function handleOfferUpload(e: React.ChangeEvent<HTMLInputElement>) {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    setOfferUploading(true);
+    setOfferMsg("");
+    const form = new FormData();
+    form.append("password", password);
+    form.append("image", file);
+    const res = await fetch("/api/special-offer", { method: "POST", body: form });
+    const data = await res.json();
+    if (res.ok) {
+      setOfferImageUrl(data.image_url);
+      setOfferActive(true);
+      setOfferMsg("Nahráno a aktivováno.");
+    } else {
+      setOfferMsg("Chyba: " + data.error);
+    }
+    setOfferUploading(false);
+  }
+
+  async function handleOfferToggle(active: boolean) {
+    setOfferActive(active);
+    await fetch("/api/special-offer", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ password, active }),
+    });
   }
 
   const inputStyle = {
@@ -304,6 +344,72 @@ export default function AdminPage() {
             {saving ? "Ukládám..." : "Uložit menu"}
           </button>
         </div>
+
+        {/* Special offer section */}
+        <div style={{ marginTop: 64, padding: 32, background: "#111", border: "1px solid rgba(255,255,255,0.08)" }}>
+          <p style={{ fontSize: 12, fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: "#ed2323", marginBottom: 24 }}>Speciální nabídka</p>
+
+          {/* Toggle */}
+          <div style={{ display: "flex", alignItems: "center", gap: 16, marginBottom: 28 }}>
+            <button
+              onClick={() => handleOfferToggle(!offerActive)}
+              style={{
+                width: 48, height: 26, borderRadius: 13,
+                background: offerActive ? "#ed2323" : "rgba(255,255,255,0.1)",
+                border: "none", cursor: "pointer", position: "relative", transition: "background 0.2s", flexShrink: 0,
+              }}
+            >
+              <span style={{
+                position: "absolute", top: 3, left: offerActive ? 25 : 3,
+                width: 20, height: 20, borderRadius: "50%", background: "#fff",
+                transition: "left 0.2s",
+              }} />
+            </button>
+            <span style={{ fontSize: 14, color: offerActive ? "#fff" : "rgba(255,255,255,0.4)" }}>
+              {offerActive ? "Nabídka je aktivní — zobrazuje se návštěvníkům" : "Nabídka je skrytá"}
+            </span>
+          </div>
+
+          <div style={{ display: "grid", gridTemplateColumns: offerImageUrl ? "1fr 1fr" : "1fr", gap: 24, alignItems: "start" }}>
+            {/* Upload */}
+            <div>
+              <label style={{ fontSize: 11, fontWeight: 600, letterSpacing: "0.1em", textTransform: "uppercase" as const, color: "rgba(255,255,255,0.4)", display: "block", marginBottom: 12 }}>
+                Nahrát obrázek
+              </label>
+              <label style={{
+                display: "flex", flexDirection: "column" as const, alignItems: "center", justifyContent: "center",
+                padding: "32px 24px", border: "2px dashed rgba(255,255,255,0.12)",
+                cursor: offerUploading ? "wait" : "pointer", gap: 8,
+                transition: "border-color 0.2s",
+              }}
+                onMouseEnter={(e) => (e.currentTarget.style.borderColor = "#ed2323")}
+                onMouseLeave={(e) => (e.currentTarget.style.borderColor = "rgba(255,255,255,0.12)")}
+              >
+                <input type="file" accept="image/*" onChange={handleOfferUpload} style={{ display: "none" }} disabled={offerUploading} />
+                <span style={{ fontSize: 28 }}>{offerUploading ? "⏳" : "📷"}</span>
+                <span style={{ fontSize: 13, color: "rgba(255,255,255,0.4)" }}>
+                  {offerUploading ? "Nahrávám..." : "Klikni pro výběr obrázku"}
+                </span>
+                <span style={{ fontSize: 11, color: "rgba(255,255,255,0.2)" }}>JPG, PNG, WebP</span>
+              </label>
+              {offerMsg && <p style={{ fontSize: 13, color: offerMsg.startsWith("Chyba") ? "#ed2323" : "#4ade80", marginTop: 12 }}>{offerMsg}</p>}
+            </div>
+
+            {/* Preview */}
+            {offerImageUrl && (
+              <div>
+                <label style={{ fontSize: 11, fontWeight: 600, letterSpacing: "0.1em", textTransform: "uppercase" as const, color: "rgba(255,255,255,0.4)", display: "block", marginBottom: 12 }}>
+                  Aktuální obrázek
+                </label>
+                <div style={{ position: "relative", width: "100%", aspectRatio: "3/4", overflow: "hidden" }}>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={offerImageUrl} alt="Speciální nabídka" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+
       </div>
     </div>
   );

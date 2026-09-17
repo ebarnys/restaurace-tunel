@@ -9,10 +9,12 @@ import Menu from "@/components/Menu";
 import Events from "@/components/Events";
 import Gallery from "@/components/Gallery";
 import Footer from "@/components/Footer";
+import SpecialOfferPopup from "@/components/SpecialOfferPopup";
 
 export default function Home() {
   return (
     <>
+      <SpecialOfferPopup />
       <Navbar />
       <main>
         <Hero />
