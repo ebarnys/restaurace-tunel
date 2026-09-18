@@ -20,7 +20,6 @@ const nextConfig: NextConfig = {
       { source: "/galerie", destination: "/#galerie", permanent: true },
       { source: "/akce", destination: "/#akce", permanent: true },
       { source: "/sport", destination: "/", permanent: true },
-      { source: "/:path+", destination: "/", permanent: false },
     ];
   },
 };
