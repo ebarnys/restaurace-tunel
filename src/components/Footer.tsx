@@ -36,7 +36,7 @@ export default function Footer() {
           <div>
             <img src="/logo/logo.png" alt="Restaurace TUNEL" style={{ height: 48, width: "auto", marginBottom: 20 }} />
             <p style={{ fontSize: 15, color: "rgba(255,255,255,0.4)", lineHeight: 1.75, maxWidth: 260, marginBottom: 20 }}>
-              Čerstvé tankové pivo, poctivé jídlo a příjemná terasa v Plzni. K nám se lidé vracejí rádi — a to od roku 2014.
+              Čerstvé tankové pivo, poctivé jídlo a příjemná terasa v Plzni. K nám se lidé vracejí rádi - a to od roku 2014.
             </p>
             <div style={{ display: "flex", alignItems: "center", gap: 6, flexWrap: "wrap" }}>
               <div style={{ display: "flex", gap: 2 }}>

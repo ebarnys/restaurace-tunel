@@ -27,7 +27,7 @@ const features = [
       </svg>
     ),
     title: "Soukromý salonek",
-    desc: "Privátní prostor pro až 35 hostů — svatby, oslavy, firemní akce.",
+    desc: "Privátní prostor pro až 35 hostů - svatby, oslavy, firemní akce.",
   },
   {
     icon: (
@@ -47,10 +47,10 @@ export default function About() {
       <div className="wrap">
         <div className="grid-2">
 
-          {/* Left — photo */}
+          {/* Left - photo */}
           <div style={{ position: "relative", height: "min(600px, 70vw)", minHeight: 320, overflow: "hidden" }}>
             <Image
-              src="/images/chef-v3.jpg"
+              src="/images/jidlo/IMG_7002.jpg"
               alt="Kuchyně Restaurace TUNEL"
               fill
               style={{ objectFit: "cover", objectPosition: "center" }}
@@ -72,7 +72,7 @@ export default function About() {
             </div>
           </div>
 
-          {/* Right — text */}
+          {/* Right - text */}
           <div style={{ display: "flex", flexDirection: "column", justifyContent: "center" }}>
             <span className="section-label">O nás</span>
             <div className="section-rule" />
@@ -80,7 +80,7 @@ export default function About() {
               Místo, kam se hosté<br />rádi vracejí
             </h2>
             <p style={{ color: "rgba(255,255,255,0.6)", lineHeight: 1.85, marginBottom: 16, fontSize: 17 }}>
-              Od roku 2014 se snažíme udělat toto místo příjemnou tradiční restaurací, kam se hosté rádi a s chutí vracejí — nejen na výborné jídlo, ale i na skvělé čepované pivo přímo z tanku nebo jen tak posedět na příjemné terase.
+              Od roku 2014 se snažíme udělat toto místo příjemnou tradiční restaurací, kam se hosté rádi a s chutí vracejí - nejen na výborné jídlo, ale i na skvělé čepované pivo přímo z tanku nebo jen tak posedět na příjemné terase.
             </p>
             <p style={{ color: "rgba(255,255,255,0.6)", lineHeight: 1.85, marginBottom: 40, fontSize: 17 }}>
               Ve spolupráci s Plzeňským Prazdrojem je u nás možné ochutnat až 4 druhy piv přímo z tanků, které vidíte hned při příchodu. Přibyly nové terasy, salonek s 35 místy a vzduchotechnika.

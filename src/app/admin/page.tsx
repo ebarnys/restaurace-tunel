@@ -412,7 +412,7 @@ export default function AdminPage() {
               }} />
             </button>
             <span style={{ fontSize: 14, color: offerActive ? "#fff" : "rgba(255,255,255,0.4)" }}>
-              {offerActive ? "Nabídka je aktivní — zobrazuje se návštěvníkům" : "Nabídka je skrytá"}
+              {offerActive ? "Nabídka je aktivní - zobrazuje se návštěvníkům" : "Nabídka je skrytá"}
             </span>
           </div>
 

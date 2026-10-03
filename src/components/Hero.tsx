@@ -11,7 +11,7 @@ export default function Hero() {
       alignItems: "center",
       overflow: "hidden",
     }}>
-      {/* Background photo — full width on mobile, right 55% on desktop */}
+      {/* Background photo - full width on mobile, right 55% on desktop */}
       <div style={{
         position: "absolute",
         inset: 0,
@@ -55,7 +55,7 @@ export default function Hero() {
             marginBottom: 40,
             maxWidth: 440,
           }}>
-            Čerstvé tankové pivo, poctivé jídlo a příjemná terasa v Plzni. K nám se lidé vracejí rádi — a to od roku 2014.
+            Čerstvé tankové pivo, poctivé jídlo a příjemná terasa v Plzni. K nám se lidé vracejí rádi - a to od roku 2014.
           </p>
 
           {/* 2 CTA buttons */}
@@ -68,7 +68,7 @@ export default function Hero() {
             </a>
           </div>
 
-          {/* Google rating — social proof below CTAs */}
+          {/* Google rating - social proof below CTAs */}
           <div className="hero-rating" style={{ display: "flex", alignItems: "center", gap: 8, marginTop: 32, flexWrap: "wrap" }}>
             <div style={{ display: "flex", gap: 3 }}>
               {[...Array(5)].map((_, i) => (

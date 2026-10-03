@@ -2,22 +2,22 @@
 import Image from "next/image";
 
 const events = [
-  { img: "/images/hospoda/IMG_4980.jpg", title: "Svatební hostiny & rauty", desc: "Soukromý salonek pro cca 35 hostů, dekorace, catering — vše připravíme na míru vašemu velkému dni." },
-  { img: "/images/jidlo/IMG_4705.jpg", title: "Grilování & letní akce", desc: "Pravidelné letní grilování na terase s živou hudbou. Klobásy, kotlety, špízy přímo z grilu." },
-  { img: "/images/hospoda/IMG_5040.jpg", title: "Firemní akce & večírky", desc: "Vánoční večírky, teambuildingy, narozeninové oslavy. Zastřešený prostor pro kapelu i diváky." },
-  { img: "/images/hospoda/IMG_5447.jpg", title: "Zabijačkové hody", desc: "Minimálně jednou ročně tradiční zabijačkové hody s muzikanty — harmonika nebo housle." },
+  { img: "/images/event-wedding.jpg", title: "Svatební hostiny & rauty", desc: "Soukromý salonek pro cca 35 hostů, dekorace, catering - vše připravíme na míru vašemu velkému dni." },
+  { img: "/images/event-grill.jpg", title: "Grilování & letní akce", desc: "Pravidelné letní grilování na terase s živou hudbou. Klobásy, kotlety, špízy přímo z grilu." },
+  { img: "/images/event-corporate.jpg", title: "Firemní akce & večírky", desc: "Vánoční večírky, teambuildingy, narozeninové oslavy. Zastřešený prostor pro kapelu i diváky." },
+  { img: "/images/event-feast.jpg", title: "Zabijačkové hody", desc: "Minimálně jednou ročně tradiční zabijačkové hody s muzikanty - harmonika nebo housle." },
 ];
 
 export default function Events() {
   return (
-    <section id="akce" className="section" style={{ background: "var(--dark)" }}>
+    <section id="akce" className="section" style={{ background: "var(--dark)", paddingBottom: 0 }}>
       <div className="wrap">
         <div style={{ maxWidth: 780, marginBottom: 64, textAlign: "center", margin: "0 auto 64px" }}>
           <span className="section-label">Akce & události</span>
           <div className="section-rule" style={{ margin: "0 auto 28px" }} />
           <h2 className="section-title" style={{ marginBottom: 24 }}>Víc než jen restaurace</h2>
           <p style={{ fontSize: 18, color: "rgba(255,255,255,0.6)", lineHeight: 1.85 }}>
-            Kromě každodenního poledního menu a stálé nabídky jídel a nápojů pořádáme pravidelné sezónní akce a rádi zajistíme i tu vaši — ať už jde o soukromou oslavu, firemní večírek, svatební hostinu nebo raut. Jídlo dovezeme také přímo k vám.
+            Kromě každodenního poledního menu a stálé nabídky jídel a nápojů pořádáme pravidelné sezónní akce a rádi zajistíme i tu vaši - ať už jde o soukromou oslavu, firemní večírek, svatební hostinu nebo raut. Jídlo dovezeme také přímo k vám.
           </p>
         </div>
 
@@ -46,7 +46,7 @@ export default function Events() {
           ))}
         </div>
 
-        {/* CTA — přímo pod kartami */}
+        {/* CTA - přímo pod kartami */}
         <div style={{ padding: "36px 48px", border: "1px solid rgba(255,255,255,0.08)", display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: 24, marginBottom: 48 }}>
           <div>
             <h3 style={{ fontSize: "clamp(1.4rem, 2.5vw, 2rem)", fontWeight: 900, color: "#fff", letterSpacing: "-0.02em", marginBottom: 6 }}>
