@@ -20,10 +20,10 @@ export default function SpecialOfferSection() {
   return (
     <>
       <section id="special-nabidka" className="section" style={{ background: "#0a0a0a", paddingTop: 80, paddingBottom: 80 }}>
-        <div className="wrap">
-          <span className="section-label">Specialni nabidka</span>
-          <div className="section-rule" />
-          <h2 className="section-title" style={{ marginBottom: 40 }}>Tento tyden u nas</h2>
+        <div className="wrap" style={{ textAlign: "center" }}>
+          <span className="section-label">Speciální nabídka</span>
+          <div className="section-rule" style={{ margin: "0 auto" }} />
+          <h2 className="section-title" style={{ marginBottom: 40 }}>Tento týden u nás</h2>
 
           <div
             onClick={() => setLightbox(true)}
