@@ -10,6 +10,7 @@ import Events from "@/components/Events";
 import Gallery from "@/components/Gallery";
 import Footer from "@/components/Footer";
 import SpecialOfferPopup from "@/components/SpecialOfferPopup";
+import SpecialOfferSection from "@/components/SpecialOfferSection";
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
         <Hero />
         <About />
         <LunchMenu />
+        <SpecialOfferSection />
         <CtaBanner />
         <GiftVoucher />
         <Menu />
