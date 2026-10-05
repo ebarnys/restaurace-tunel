@@ -55,7 +55,7 @@ export default function SpecialOfferPopup() {
           position: "relative",
           width: "100%",
           maxWidth: 460,
-          maxHeight: "90vh",
+          height: "min(90vh, 680px)",
           display: "flex",
           flexDirection: "column",
           animation: "slideUp 0.35s ease",
