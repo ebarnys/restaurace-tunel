@@ -13,7 +13,7 @@ const features = [
       </svg>
     ),
     title: "Tankové pivo",
-    desc: "4 druhy čerstvého piva přímo z tanků Plzeňského Prazdroje.",
+    desc: "2 druhy čerstvého piva přímo z tanků Plzeňského Prazdroje.",
   },
   {
     icon: (
@@ -83,7 +83,7 @@ export default function About() {
               Od roku 2014 se snažíme udělat toto místo příjemnou tradiční restaurací, kam se hosté rádi a s chutí vracejí - nejen na výborné jídlo, ale i na skvělé čepované pivo přímo z tanku nebo jen tak posedět na příjemné terase.
             </p>
             <p style={{ color: "rgba(255,255,255,0.6)", lineHeight: 1.85, marginBottom: 40, fontSize: 17 }}>
-              Ve spolupráci s Plzeňským Prazdrojem je u nás možné ochutnat až 4 druhy piv přímo z tanků, které vidíte hned při příchodu. Přibyly nové terasy, salonek s 35 místy a vzduchotechnika.
+              Ve spolupráci s Plzeňským Prazdrojem je u nás možné ochutnat 2 druhy piv přímo z tanků, které vidíte hned při příchodu. Přibyly nové terasy a salonek s 35 místy.
             </p>
 
             {/* Features list */}

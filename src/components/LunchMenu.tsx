@@ -29,13 +29,13 @@ export default function LunchMenu() {
           </div>
           <div style={{ textAlign: "right" }}>
             <p style={{ fontSize: 13, color: "rgba(255,255,255,0.4)", marginBottom: 4, letterSpacing: "0.1em", textTransform: "uppercase" }}>Servírujeme</p>
-            <p style={{ fontSize: 18, fontWeight: 700, color: "#ed2323" }}>Po – Pá · 11:00 – 14:30</p>
+            <p style={{ fontSize: 18, fontWeight: 700, color: "#ed2323" }}>Po – Pá · 10:30 – 14:00</p>
           </div>
         </div>
 
         <div style={{ display: "flex", gap: 24, marginBottom: 40, flexWrap: "wrap" }}>
           <span style={{ fontSize: 14, color: "rgba(255,255,255,0.45)", letterSpacing: "0.06em" }}>
-            Polévka k hlavnímu chodu <strong style={{ color: "rgba(255,255,255,0.75)" }}>29,–</strong>
+            Polévka k hlavnímu chodu <strong style={{ color: "rgba(255,255,255,0.75)" }}>35,–</strong>
           </span>
           <span style={{ fontSize: 14, color: "rgba(255,255,255,0.2)" }}>·</span>
           <span style={{ fontSize: 14, color: "rgba(255,255,255,0.45)", letterSpacing: "0.06em" }}>
