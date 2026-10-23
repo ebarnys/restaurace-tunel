@@ -21,7 +21,7 @@ export default function EventBannerSection() {
     <>
       <section id="nadchazejici-akce" className="section" style={{ background: "#111", paddingTop: 80, paddingBottom: 80 }}>
         <div className="wrap">
-          <span className="section-label">Nadcházející akce</span>
+          <span className="section-label" style={{ display: "block", textAlign: "center" }}>Nadcházející akce</span>
           <div className="section-rule" style={{ margin: "0 auto" }} />
           <h2 className="section-title" style={{ marginBottom: 40, textAlign: "center" }}>Připravujeme pro vás</h2>
 
