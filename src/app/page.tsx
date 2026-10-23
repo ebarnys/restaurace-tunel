@@ -11,6 +11,7 @@ import Gallery from "@/components/Gallery";
 import Footer from "@/components/Footer";
 import SpecialOfferPopup from "@/components/SpecialOfferPopup";
 import SpecialOfferSection from "@/components/SpecialOfferSection";
+import EventBannerSection from "@/components/EventBannerSection";
 
 export default function Home() {
   return (
@@ -26,6 +27,7 @@ export default function Home() {
         <GiftVoucher />
         <Menu />
         <Events />
+        <EventBannerSection />
         <Gallery />
         <Contact />
       </main>

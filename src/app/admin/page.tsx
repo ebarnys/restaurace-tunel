@@ -31,6 +31,12 @@ export default function AdminPage() {
   const [offerUploading, setOfferUploading] = useState(false);
   const [offerMsg, setOfferMsg] = useState("");
 
+  // Event banner state
+  const [eventActive, setEventActive] = useState(false);
+  const [eventImageUrl, setEventImageUrl] = useState<string | null>(null);
+  const [eventUploading, setEventUploading] = useState(false);
+  const [eventMsg, setEventMsg] = useState("");
+
   async function handleLogin(e: React.FormEvent) {
     e.preventDefault();
     setLoading(true);
@@ -54,6 +60,11 @@ export default function AdminPage() {
         fetch("/api/special-offer").then(r => r.json()).then(d => {
           setOfferActive(d.active);
           setOfferImageUrl(d.image_url);
+        }).catch(() => {});
+        // Load event banner state
+        fetch("/api/event-banner").then(r => r.json()).then(d => {
+          setEventActive(d.active);
+          setEventImageUrl(d.image_url);
         }).catch(() => {});
       } else {
         setAuthError("Nesprávné heslo. Zkuste to znovu.");
@@ -126,6 +137,35 @@ export default function AdminPage() {
   async function handleOfferToggle(active: boolean) {
     setOfferActive(active);
     await fetch("/api/special-offer", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ password, active }),
+    });
+  }
+
+  async function handleEventUpload(e: React.ChangeEvent<HTMLInputElement>) {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    setEventUploading(true);
+    setEventMsg("");
+    const form = new FormData();
+    form.append("password", password);
+    form.append("image", file);
+    const res = await fetch("/api/event-banner", { method: "POST", body: form });
+    const data = await res.json();
+    if (res.ok) {
+      setEventImageUrl(data.image_url);
+      setEventActive(true);
+      setEventMsg("Nahráno a aktivováno.");
+    } else {
+      setEventMsg("Chyba: " + data.error);
+    }
+    setEventUploading(false);
+  }
+
+  async function handleEventToggle(active: boolean) {
+    setEventActive(active);
+    await fetch("/api/event-banner", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ password, active }),
@@ -389,6 +429,68 @@ export default function AdminPage() {
           >
             {saving ? "Ukládám..." : "Uložit menu"}
           </button>
+        </div>
+
+        {/* Event banner section */}
+        <div style={{ marginTop: 32, padding: 32, background: "#111", border: "1px solid rgba(255,255,255,0.08)" }}>
+          <p style={{ fontSize: 12, fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: "#ed2323", marginBottom: 24 }}>Nadchazejici akce</p>
+
+          <div style={{ display: "flex", alignItems: "center", gap: 16, marginBottom: 28 }}>
+            <button
+              onClick={() => handleEventToggle(!eventActive)}
+              style={{
+                width: 48, height: 26, borderRadius: 13,
+                background: eventActive ? "#ed2323" : "rgba(255,255,255,0.1)",
+                border: "none", cursor: "pointer", position: "relative", transition: "background 0.2s", flexShrink: 0,
+              }}
+            >
+              <span style={{
+                position: "absolute", top: 3, left: eventActive ? 25 : 3,
+                width: 20, height: 20, borderRadius: "50%", background: "#fff",
+                transition: "left 0.2s",
+              }} />
+            </button>
+            <span style={{ fontSize: 14, color: eventActive ? "#fff" : "rgba(255,255,255,0.4)" }}>
+              {eventActive ? "Akce je aktivni - zobrazuje se navstevnikum" : "Akce je skryta"}
+            </span>
+          </div>
+
+          <div style={{ display: "grid", gridTemplateColumns: eventImageUrl ? "1fr 1fr" : "1fr", gap: 24, alignItems: "start" }}>
+            <div>
+              <label style={{ fontSize: 11, fontWeight: 600, letterSpacing: "0.1em", textTransform: "uppercase" as const, color: "rgba(255,255,255,0.4)", display: "block", marginBottom: 12 }}>
+                Nahrat plakat akce
+              </label>
+              <label style={{
+                display: "flex", flexDirection: "column" as const, alignItems: "center", justifyContent: "center",
+                padding: "32px 24px", border: "2px dashed rgba(255,255,255,0.12)",
+                cursor: eventUploading ? "wait" : "pointer", gap: 8,
+                transition: "border-color 0.2s",
+              }}
+                onMouseEnter={(e) => (e.currentTarget.style.borderColor = "#ed2323")}
+                onMouseLeave={(e) => (e.currentTarget.style.borderColor = "rgba(255,255,255,0.12)")}
+              >
+                <input type="file" accept="image/*" onChange={handleEventUpload} style={{ display: "none" }} disabled={eventUploading} />
+                <span style={{ fontSize: 28 }}>{eventUploading ? "⏳" : "🎉"}</span>
+                <span style={{ fontSize: 13, color: "rgba(255,255,255,0.4)" }}>
+                  {eventUploading ? "Nahravám..." : "Klikni pro vyber obrazku"}
+                </span>
+                <span style={{ fontSize: 11, color: "rgba(255,255,255,0.2)" }}>JPG, PNG, WebP</span>
+              </label>
+              {eventMsg && <p style={{ fontSize: 13, color: eventMsg.startsWith("Chyba") ? "#ed2323" : "#4ade80", marginTop: 12 }}>{eventMsg}</p>}
+            </div>
+
+            {eventImageUrl && (
+              <div>
+                <label style={{ fontSize: 11, fontWeight: 600, letterSpacing: "0.1em", textTransform: "uppercase" as const, color: "rgba(255,255,255,0.4)", display: "block", marginBottom: 12 }}>
+                  Aktualni plakat
+                </label>
+                <div style={{ position: "relative", width: "100%", aspectRatio: "3/4", overflow: "hidden" }}>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={eventImageUrl} alt="Nadchazejici akce" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                </div>
+              </div>
+            )}
+          </div>
         </div>
 
         {/* Special offer section */}
