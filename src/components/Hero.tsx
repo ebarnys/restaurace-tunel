@@ -5,7 +5,7 @@ export default function Hero() {
   return (
     <section id="uvod" style={{
       position: "relative",
-      minHeight: "100vh",
+      minHeight: "72vh",
       background: "#0a0a0a",
       display: "flex",
       alignItems: "center",
