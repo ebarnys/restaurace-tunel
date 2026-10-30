@@ -9,6 +9,7 @@ const leagueSpartan = League_Spartan({
 });
 
 export const metadata: Metadata = {
+  verification: { google: "hFNGyg-_9uGlKziGYNIRzkB9aVWiEHhc__v5xmJnR_A" },
   title: "Restaurace TUNEL Plzeň",
   description: "Tradiční česká restaurace v Plzni. Tankové pivo, polední menu, soukromé akce, terasa.",
   keywords: "restaurace, Plzeň, polední menu, tankové pivo, Pilsner Urquell, terasa, firemní akce",
